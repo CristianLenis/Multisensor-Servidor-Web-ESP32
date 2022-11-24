@@ -3,8 +3,8 @@
 #include "DHT.h"
 #include <Adafruit_Sensor.h>
 
-const char* ssid     = "MOVISTAR_FIBRA_28B0";
-const char* password = "Mayi.2022";
+const char* ssid     = "NombreRed";
+const char* password = "Contraseña";
 
 #define DHTTYPE DHT11
 
