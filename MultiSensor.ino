@@ -15,7 +15,6 @@ static char fahrenheitTemp[7];
 static char humidityTemp[7];
 
 #define EEPROM_SIZE 4
-
 const int output = 2;
 const int redRGB = 14;
 const int greenRGB = 12;
