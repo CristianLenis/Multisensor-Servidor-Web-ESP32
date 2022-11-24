@@ -7,7 +7,6 @@ const char* ssid     = "NombreRed";
 const char* password = "Contraseña";
 
 #define DHTTYPE DHT11
-
 const int DHTPin = 27;
 DHT dht(DHTPin, DHTTYPE);
 
