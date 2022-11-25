@@ -47,29 +47,23 @@ const long timeoutTime = 2000;
 
 void setup() {
   dht.begin();
-
   Serial.begin(115200);
-
   pinMode(motionSensor, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(motionSensor), detectsMovement, RISING);
-  
   Serial.println("start...");
   if(!EEPROM.begin(EEPROM_SIZE)) {
     Serial.println("failed to initialise EEPROM"); 
     delay(1000);
   }
-
   Serial.println(" bytes read from Flash . Values are:");
   for(int i = 0; i < EEPROM_SIZE; i++) {
     Serial.print(byte(EEPROM.read(i))); 
     Serial.print(" ");
   }
-  
   pinMode(output, OUTPUT);
   pinMode(redRGB, OUTPUT);
   pinMode(greenRGB, OUTPUT);
   pinMode(blueRGB, OUTPUT);
-
   if(!EEPROM.read(0)) {
     outputState = "Apagado";
     digitalWrite(output, HIGH);
@@ -82,7 +76,6 @@ void setup() {
   timer = EEPROM.read(2);
   ldrThreshold = EEPROM.read(3);
   configureMode();
-  
   Serial.print("Connecting to ");
   Serial.println(ssid);
   WiFi.begin(ssid, password);
@@ -96,7 +89,6 @@ void setup() {
   Serial.println(WiFi.localIP());
   server.begin();
 }
-
 void loop() {
   WiFiClient client = server.available();   
   if (client) {                             
