@@ -230,9 +230,9 @@ void loop() {
               // Check if any reads failed and exit early (to try again).
               if (isnan(h) || isnan(t) || isnan(f)) {
                 Serial.println("Failed to read from DHT sensor!");
-                strcpy(celsiusTemp,"50");
-                strcpy(fahrenheitTemp, "50");
-                strcpy(humidityTemp, "50");         
+                strcpy(celsiusTemp,"Failed");
+                strcpy(fahrenheitTemp, "Failed");
+                strcpy(humidityTemp, "Failed");         
               }
               else {
                 // Computes temperature values in Celsius + Fahrenheit and Humidity
