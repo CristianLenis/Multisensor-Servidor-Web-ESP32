@@ -89,6 +89,7 @@ void setup() {
   Serial.println(WiFi.localIP());
   server.begin();
 }
+
 void loop() {
   WiFiClient client = server.available();   
   if (client) {                             
@@ -353,6 +354,7 @@ void detectsMovement() {
     lastMeasure = millis();
   }  
 }
+
 void configureMode() {
   // Mode: Manual
   if(selectedMode == 0) {
